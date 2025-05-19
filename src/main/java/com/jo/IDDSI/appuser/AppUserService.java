@@ -42,7 +42,7 @@ public class AppUserService implements UserDetailsService {// query against data
 
     // Link to confirm email
     public String signUpUser(AppUser appUser) {
-
+        // TODO : Check that attributes aren't the same
         boolean userExists = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
         if(userExists) {
             throw new IllegalStateException(
