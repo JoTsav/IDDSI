@@ -48,7 +48,7 @@ public class AppUser implements UserDetails {
     private AppUserRole appUserRole;
 
     private Boolean locked = false; // default value
-    private Boolean enabled = false; // default value
+    private Boolean enabled = false; // default value (enable only once email is confirmed)
 
     public AppUser(String firstName,
                    String lastName,
