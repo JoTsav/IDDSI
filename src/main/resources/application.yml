@@ -1,0 +1,38 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    password: your_password
+    url: jdbc:postgresql://localhost:5432/IDDSI-registration
+    username: your_username
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # don't persist data
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  # mail config: testing
+  mail:
+    host: localhost
+    port: 1025
+    username: hey
+    password: hey
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connection timeout: 5000
+          timeout: 3000
+          write timeout: 5000
