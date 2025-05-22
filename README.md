@@ -120,6 +120,37 @@ The application will be available at:
 - Main application: http://localhost:8081
 - MailDev interface: http://localhost:1080
 
+## Running with Docker
+
+If you don't have Java or PostgreSQL installed locally, you can run the application using Docker:
+
+1. Make sure you have Docker and Docker Compose installed on your system
+
+2. Build the application:
+```bash
+mvn clean package -DskipTests
+```
+
+3. Start the containers:
+```bash
+docker-compose up --build
+```
+
+The application will be available at:
+- Main application: http://localhost:8081
+- MailDev interface: http://localhost:1080
+- PostgreSQL database: localhost:5432
+
+To stop the application:
+```bash
+docker-compose down
+```
+
+To stop the application and remove the database volume:
+```bash
+docker-compose down -v
+```
+
 ## Application Flow
 
 1. **Home Page** (Port 8081)
