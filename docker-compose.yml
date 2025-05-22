@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/IDDSI-registration
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=tsava
+      - SPRING_MAIL_HOST=maildev
+      - SPRING_MAIL_PORT=1025
+    depends_on:
+      - postgres
+      - maildev
+
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=IDDSI-registration
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=tsava
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  maildev:
+    image: maildev/maildev
+    ports:
+      - "1025:1025" # SMTP port
+      - "1080:1080" # Web interface port
+
+volumes:
+  postgres_data:
