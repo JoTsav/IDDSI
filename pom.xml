@@ -79,11 +79,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.jo</groupId>
-			<artifactId>IDDSI</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		<!-- Referncing oneself as a dependency is not permitted.
+		Only declare dependencies on other modules and libraries used
+<!-		<dependency> -->
+<!--			<groupId>com.jo</groupId>-->
+<!--			<artifactId>IDDSI</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>
