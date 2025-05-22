@@ -6,9 +6,9 @@ server:
 
 spring:
   datasource:
-    password: your_password
+    password: tsava
     url: jdbc:postgresql://localhost:5432/IDDSI-registration
-    username: your_username
+    username: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
